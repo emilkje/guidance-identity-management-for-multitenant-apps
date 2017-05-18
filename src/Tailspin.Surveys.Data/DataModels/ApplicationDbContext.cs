@@ -21,6 +21,7 @@ namespace Tailspin.Surveys.Data.DataModels
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<User>(b =>
             {
                 b.ToTable("User");
@@ -93,6 +94,10 @@ namespace Tailspin.Surveys.Data.DataModels
             modelBuilder.Entity<SurveyContributor>(b =>
             {
                 b.ToTable("SurveyContributor");
+            });
+
+            modelBuilder.Entity<Question>(b => {
+                b.ToTable("Question");
             });
         }
 
